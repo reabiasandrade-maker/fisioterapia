@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FisioTrack Pro</title>
+  <title>FisioTrack Pro - Google Sheets</title>
   <style>
     :root {
       --bg: #f3f7fc;
@@ -305,7 +305,7 @@
       <div class="auth-brand">
         <div>
           <h1>FisioTrack Pro</h1>
-          <p>Fisioterapia esportiva com histórico de lesões, conduta, exames, documentos e integração com Google Sheets.</p>
+          <p>Sistema web responsivo para fisioterapia esportiva com histórico de lesões, conduta, exames, documentos e integração com Google Sheets.</p>
           <div class="auth-points">
             <div class="auth-point">Os dados são carregados e salvos na sua planilha via Google Apps Script.</div>
             <div class="auth-point">Comissão pode editar tudo; atleta visualiza apenas o próprio perfil.</div>
@@ -367,7 +367,7 @@
         </div>
       </div>
 
-      <div class="status-banner" id="syncBanner">Conecte sua API do Google Apps Script na constante <strong>https://script.google.com/macros/s/AKfycbz0EfZ31sy4R5jcRhe8VfKwdHPADg87wPxFstmc4sPH9qE6W21Z4TDts-GISMWoipzH/exec</strong> para carregar e salvar os dados.</div>
+      <div class="status-banner" id="syncBanner">Conecte sua API do Google Apps Script na constante <strong>API_URL</strong> para carregar e salvar os dados.</div>
 
       <div class="toolbar" id="heroToolbar">
         <input type="text" id="searchInput" placeholder="Buscar atleta, modalidade ou categoria" />
@@ -394,7 +394,7 @@
 
   <script>
     // SUBSTITUA pela URL do seu Apps Script publicado
-    const API_URL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbz0EfZ31sy4R5jcRhe8VfKwdHPADg87wPxFstmc4sPH9qE6W21Z4TDts-GISMWoipzH/exec';
 
     const bodyParts = [
       { id: 'cabeca', nome: 'Cabeça', x: 50, y: 9, lado: 'frente' },
@@ -1284,7 +1284,7 @@
 
     setAuthRole('staff');
     if (!isApiConfigured()) {
-      showSyncMessage('Defina a variável <strong>https://script.google.com/macros/s/AKfycbz0EfZ31sy4R5jcRhe8VfKwdHPADg87wPxFstmc4sPH9qE6W21Z4TDts-GISMWoipzH/exec</strong> com o link do seu Apps Script publicado antes de usar.', true);
+      showSyncMessage('Defina a variável <strong>API_URL</strong> com o link do seu Apps Script publicado antes de usar.', true);
     }
   </script>
 </body>
